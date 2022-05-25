@@ -18,6 +18,8 @@
 		D82345272820FCA30032E751 /* BillItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82345262820FCA30032E751 /* BillItem.swift */; };
 		D82345292820FDD10032E751 /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82345282820FDD10032E751 /* Participant.swift */; };
 		D823452B282100F00032E751 /* Cost.swift in Sources */ = {isa = PBXBuildFile; fileRef = D823452A282100F00032E751 /* Cost.swift */; };
+		D8DA798C283DE8E8000832FD /* ItemCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DA798B283DE8E8000832FD /* ItemCardView.swift */; };
+		D8DA798E283DE943000832FD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DA798D283DE943000832FD /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,10 +50,12 @@
 		D823450E2820F9850032E751 /* BillSplitterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BillSplitterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D82345122820F9850032E751 /* BillSplitterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillSplitterUITests.swift; sourceTree = "<group>"; };
 		D82345142820F9850032E751 /* BillSplitterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillSplitterUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D82345242820FC340032E751 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		D82345242820FC340032E751 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItemDetailView.swift; path = ../../Core/View/ItemDetailView.swift; sourceTree = "<group>"; };
 		D82345262820FCA30032E751 /* BillItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItem.swift; sourceTree = "<group>"; };
 		D82345282820FDD10032E751 /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
 		D823452A282100F00032E751 /* Cost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cost.swift; sourceTree = "<group>"; };
+		D8DA798B283DE8E8000832FD /* ItemCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCardView.swift; sourceTree = "<group>"; };
+		D8DA798D283DE943000832FD /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 		D82344F62820F9830032E751 /* BillSplitter */ = {
 			isa = PBXGroup;
 			children = (
+				D8DA7986283DE893000832FD /* Bill */,
+				D8DA7985283DE88B000832FD /* Item */,
 				D82345212820F9F90032E751 /* Core */,
 				D82344F72820F9830032E751 /* BillSplitterApp.swift */,
 				D82344F92820F9830032E751 /* ContentView.swift */,
@@ -158,7 +164,55 @@
 		D82345232820FA1D0032E751 /* View */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D8DA7985283DE88B000832FD /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				D8DA7987283DE89C000832FD /* View */,
+				D8DA7988283DE8A1000832FD /* Model */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		D8DA7986283DE893000832FD /* Bill */ = {
+			isa = PBXGroup;
+			children = (
+				D8DA798A283DE8BA000832FD /* View */,
+				D8DA7989283DE8B3000832FD /* Model */,
+			);
+			path = Bill;
+			sourceTree = "<group>";
+		};
+		D8DA7987283DE89C000832FD /* View */ = {
+			isa = PBXGroup;
+			children = (
 				D82345242820FC340032E751 /* ItemDetailView.swift */,
+				D8DA798B283DE8E8000832FD /* ItemCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D8DA7988283DE8A1000832FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D8DA798D283DE943000832FD /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D8DA7989283DE8B3000832FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D8DA798A283DE8BA000832FD /* View */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,7 +351,9 @@
 				D82344FA2820F9830032E751 /* ContentView.swift in Sources */,
 				D82344F82820F9830032E751 /* BillSplitterApp.swift in Sources */,
 				D82345292820FDD10032E751 /* Participant.swift in Sources */,
+				D8DA798E283DE943000832FD /* Item.swift in Sources */,
 				D82345252820FC340032E751 /* ItemDetailView.swift in Sources */,
+				D8DA798C283DE8E8000832FD /* ItemCardView.swift in Sources */,
 				D82345272820FCA30032E751 /* BillItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
