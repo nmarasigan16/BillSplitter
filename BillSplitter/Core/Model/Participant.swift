@@ -9,27 +9,34 @@ import Foundation
 struct Participant: Identifiable {
     let id: UUID
     var name: String
-    var costs: [Cost]
     
-    init(id: UUID = UUID(), name: String, costs: [Cost]) {
+    init(id: UUID = UUID(), name: String) {
         self.id = id
         self.name = name
-        self.costs = costs
     }
 }
 
 extension Participant {
     struct Data {
         var name: String = "Spaghet"
-        var costs: [Cost] = []
     }
     
     var data: Data {
-        Data(name: name, costs: costs)
+        Data(name: name)
     }
     
     mutating func update(from data: Data) {
         name = data.name
-        costs = data.costs
     }
+}
+
+extension Participant {
+    static let sampleData: [Participant] =
+    [
+        Participant(name: "Charles"),
+        Participant(name: "Magneto"),
+        Participant(name: "Beast"),
+        Participant(name: "Wolverine"),
+        Participant(name: "Kitty")
+    ]
 }

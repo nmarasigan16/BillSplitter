@@ -1,4 +1,4 @@
-//
+
 //  ItemCardView.swift
 //  BillSplitter
 //
@@ -11,18 +11,21 @@ struct ItemCardView: View {
     let item: Item
     
     var body: some View {
+        let formattedCost = String(format: "%.2f", item.costPerItem * Float(item.quantity))
         VStack(alignment: .leading) {
-            Text(scrum.title)
-                .accessibilityAddTraits(.isHeader)
-                .font(.headline)
+            HStack {
+                Text(item.name)
+                    .accessibilityAddTraits(.isHeader)
+                    .font(.headline)
+                Spacer()
+                Label("$\(formattedCost)", systemImage: "doc.text")
+                    .accessibilityLabel("\(formattedCost) total cost")
+            }
             Spacer()
             HStack {
-                Label("\(scrum.attendees.count)", systemImage: "person.3")
-                    .accessibilityLabel("\(scrum.attendees.count) attendees")
-                Spacer()
-                Label("\(scrum.lengthInMinutes)", systemImage: "clock")
-                    .accessibilityLabel("\(scrum.lengthInMinutes) minute meeting")
-                    .labelStyle(.trailingIcon)
+                //TOOD make this the colors of the people
+                Label("\(item.participants.count)", systemImage: "person.3")
+                    .accessibilityLabel("\(item.participants.count) participants")
             }
             .font(.caption)
         }
@@ -32,6 +35,7 @@ struct ItemCardView: View {
 
 struct ItemCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemCardView()
+        ItemCardView(item: Item.sampleData[0])
+        .previewLayout(.fixed(width: 400, height: 60))
     }
 }
