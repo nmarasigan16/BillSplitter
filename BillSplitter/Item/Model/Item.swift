@@ -13,6 +13,9 @@ struct Item: Identifiable {
     var quantity: Int
     var costPerItem: Float
     var participants: [Participant]
+    var totalCost: Float { costPerItem * Float(quantity) }
+    var formattedCostPerItem: String { String(format: "%.2f", costPerItem) }
+    var formattedTotalCost: String { String(format: "%.2f", totalCost) }
     
     init(id: UUID = UUID(), name: String, quantity: Int, costPerItem: Float, participants: [Participant]) {
         self.id = id
@@ -21,6 +24,7 @@ struct Item: Identifiable {
         self.costPerItem = costPerItem
         self.participants = participants
     }
+    
 }
 
 extension Item {

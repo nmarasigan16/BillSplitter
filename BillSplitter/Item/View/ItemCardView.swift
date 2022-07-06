@@ -11,15 +11,14 @@ struct ItemCardView: View {
     let item: Item
     
     var body: some View {
-        let formattedCost = String(format: "%.2f", item.costPerItem * Float(item.quantity))
         VStack(alignment: .leading) {
             HStack {
                 Text(item.name)
                     .accessibilityAddTraits(.isHeader)
                     .font(.headline)
                 Spacer()
-                Label("$\(formattedCost)", systemImage: "doc.text")
-                    .accessibilityLabel("\(formattedCost) total cost")
+                Text("$\(item.formattedTotalCost)")
+                    .accessibilityLabel("\(item.formattedTotalCost) total cost")
             }
             Spacer()
             HStack {
